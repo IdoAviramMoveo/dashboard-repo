@@ -1,0 +1,55 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+@import "../../styles/fonts";
+
+.actions-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 7% 6% 5% 6%;
+    flex-direction: row-reverse;
+    @include xsmall {
+      justify-content: center;
+      width: 100%;
+      gap: 8px;
+      padding-right: 0;
+    }
+
+    .next-button {
+      color: $white-default;
+      width: 208px;
+      height: 52px;
+      font-family: $opensanshebrew-font;
+      font-size: 18px;
+      font-weight: 700;
+      @include xsmall {
+        height: 64px;
+        width: 47%;
+      }
+      &:disabled {
+        cursor: not-allowed;
+        color: $grey-dark;
+        background-color: $grey-lightest;
+        border: 0;
+      }
+      &:enabled {
+        background-image: linear-gradient(180deg, $primary-text, $primary-text);
+        cursor: pointer;
+      }
+    }
+
+    .prev-button {
+      cursor: pointer;
+      color: $grey-darker;
+      background-image: linear-gradient(180deg, $white-default, $white-default);
+      border: 1px solid $grey-darkest;
+      width: 208px;
+      height: 52px;
+      font-family: $opensanshebrew-font;
+      font-size: 18px;
+      font-weight: 700;
+      @include xsmall {
+        height: 64px;
+        width: 47%;
+      }
+    }
+  }
